@@ -1,7 +1,7 @@
 /* General Resets and Font */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
+    monospace;
   line-height: 1.6;
   margin: 0;
   /* Removed padding: 20px; to allow gradient full bleed */
@@ -98,9 +98,9 @@ main {
 /* Header within Editor Content */
 .main-header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   border-bottom: 1px solid #30363d; /* Use editor border color */
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .main-header h1 {
@@ -108,12 +108,14 @@ main {
   font-size: 2.2em; /* Slightly adjusted */
   font-weight: 600;
   color: #c9d1d9; /* Match GitHub text color */
+  font-family: inherit; /* Use the body's monospace font */
 }
 
 .main-header p {
   color: #8b949e; /* Match GitHub secondary text */
   margin: 0;
   font-size: 1.1em;
+  font-family: inherit; /* Use the body's monospace font */
 }
 
 /* Profile Card Layout */
@@ -162,7 +164,7 @@ main {
 
 .profile-info h3 {
   font-size: 1.3em;
-  margin-top: 30px;
+  margin-top: 20px;
   color: #8b949e; /* Match secondary text */
 }
 
@@ -183,11 +185,16 @@ main {
 .profile-info p {
   margin-bottom: 12px;
   color: #c9d1d9;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
+    monospace;
+  font-size: 0.95em;
 }
 
 .profile-info p strong {
   color: #c9d1d9;
   font-weight: 600;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
+    monospace;
 }
 
 /* Links Styling (Social & Projects) */
@@ -205,6 +212,7 @@ main {
   transition: background-color 0.2s, border-color 0.2s, color 0.2s;
   font-weight: 500;
   font-size: 0.9em; /* Slightly smaller button text */
+  font-family: inherit; /* Use the body's monospace font */
 }
 
 .social-links a:hover,
@@ -225,6 +233,7 @@ footer {
   width: 100%; /* Make footer full width */
   box-sizing: border-box;
   position: relative; /* Ensure it's below the main content */
+  font-family: inherit; /* Use the body's monospace font */
 }
 
 /* Responsive Adjustments */
