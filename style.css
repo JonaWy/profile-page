@@ -1,0 +1,295 @@
+/* General Resets and Font */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.6;
+  margin: 0;
+  /* Removed padding: 20px; to allow gradient full bleed */
+  /* Animated Gradient Background inspired by the image */
+  /* More contrasting colors */
+  background: linear-gradient(
+    135deg,
+    #ff6b6b 10%,
+    /* Vibrant Red/Pink */ #feca57 30%,
+    /* Vibrant Orange/Yellow */ #48dbfb 50%,
+    /* Vibrant Blue */ #9b59b6 70%,
+    /* Vibrant Purple */ #ff6b6b 90% /* Repeat first color for smoother loop */
+  );
+  background-size: 400% 400%;
+  animation: gradient-animation 15s ease infinite;
+  color: #e0e0e0; /* Light grey text default */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure full height for gradient */
+  align-items: center; /* Center main horizontally */
+  justify-content: center; /* Center main vertically if content is short */
+  padding: 20px; /* Add padding for spacing from edges */
+  box-sizing: border-box; /* Include padding in height calculation */
+}
+
+/* Keyframes for the background animation */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Main Content Area Styling - Code Editor Look */
+main {
+  /* Removed padding: 40px; - will be handled by inner container */
+  max-width: 900px; /* Slightly wider editor */
+  width: 100%;
+  margin: 30px 0; /* Vertical margin, horizontal handled by body align-items */
+  background: #161b22; /* Dark editor background (like GitHub dark) */
+  border: 1px solid #30363d; /* Editor border */
+  border-radius: 8px; /* Typical window border radius */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6); /* More prominent shadow */
+  flex-grow: 0; /* Don't allow main to grow excessively */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Ensure border-radius clips content */
+}
+
+/* Editor Title Bar */
+.editor-title-bar {
+  background-color: #0d1117; /* Slightly darker title bar */
+  padding: 10px 15px;
+  border-bottom: 1px solid #30363d;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.window-dots {
+  display: flex;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.dot.red {
+  background-color: #ff5f57;
+}
+.dot.yellow {
+  background-color: #ffbd2e;
+}
+.dot.green {
+  background-color: #28c940;
+}
+
+/* Container for the actual editor content */
+.editor-content {
+  padding: 30px 40px; /* Padding inside the editor */
+  flex-grow: 1;
+  overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+/* Header within Editor Content */
+.main-header {
+  text-align: center;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #30363d; /* Use editor border color */
+  padding-bottom: 30px;
+}
+
+.main-header h1 {
+  margin: 0 0 8px 0;
+  font-size: 2.2em; /* Slightly adjusted */
+  font-weight: 600;
+  color: #c9d1d9; /* Match GitHub text color */
+}
+
+.main-header p {
+  color: #8b949e; /* Match GitHub secondary text */
+  margin: 0;
+  font-size: 1.1em;
+}
+
+/* Profile Card Layout */
+.profile-card {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.profile-picture-container {
+  flex-basis: 180px; /* Adjusted size */
+  flex-shrink: 0;
+  text-align: center;
+}
+
+#profile-picture {
+  width: 160px; /* Adjusted size */
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #30363d;
+  display: block;
+  margin: 0 auto 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Profile Info Section */
+.profile-info {
+  flex-grow: 1;
+}
+
+.profile-info h2,
+.profile-info h3 {
+  color: #c9d1d9;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.profile-info h2 {
+  font-size: 1.6em;
+  margin-bottom: 25px;
+}
+
+.profile-info h3 {
+  font-size: 1.3em;
+  margin-top: 30px;
+  color: #8b949e; /* Match secondary text */
+}
+
+/* Apply Monospace font to lists for 'code' feel */
+.profile-info ul {
+  list-style: none;
+  padding-left: 0;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
+    monospace; /* Monospace Font Stack */
+  font-size: 0.95em;
+}
+
+.profile-info ul li {
+  margin-bottom: 10px;
+  color: #c9d1d9;
+}
+
+.profile-info p {
+  margin-bottom: 12px;
+  color: #c9d1d9;
+}
+
+.profile-info p strong {
+  color: #c9d1d9;
+  font-weight: 600;
+}
+
+/* Links Styling (Social & Projects) */
+.social-links a,
+.project-link {
+  display: inline-block;
+  margin-right: 12px;
+  margin-bottom: 12px;
+  color: #58a6ff; /* GitHub blue accent */
+  text-decoration: none;
+  background-color: #21262d; /* GitHub button background */
+  border: 1px solid #30363d; /* GitHub button border */
+  padding: 8px 15px; /* Adjusted padding */
+  border-radius: 6px;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  font-weight: 500;
+  font-size: 0.9em; /* Slightly smaller button text */
+}
+
+.social-links a:hover,
+.project-link:hover {
+  background-color: #30363d;
+  border-color: #58a6ff;
+  color: #c9d1d9;
+}
+
+/* Footer Styling */
+footer {
+  text-align: center;
+  margin-top: 30px; /* Space between main and footer */
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.2); /* Semi-transparent footer over gradient */
+  color: #aaa;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle top border */
+  width: 100%; /* Make footer full width */
+  box-sizing: border-box;
+  position: relative; /* Ensure it's below the main content */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  body {
+    padding: 15px; /* Adjust padding */
+  }
+  main {
+    margin: 20px 0;
+    max-width: 100%;
+  }
+  .editor-content {
+    padding: 20px 25px;
+  }
+  .profile-card {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  .profile-picture-container {
+    margin-bottom: 20px;
+    flex-basis: auto;
+  }
+  #profile-picture {
+    width: 140px; /* Adjust size */
+    height: 140px;
+  }
+  .profile-info {
+    text-align: center;
+    width: 100%; /* Ensure full width */
+  }
+  .profile-info h2,
+  .profile-info h3 {
+    text-align: center;
+  }
+  .social-links,
+  .profile-info ul {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+  .editor-content {
+    padding: 15px 20px;
+  }
+  .main-header h1 {
+    font-size: 1.8em;
+  }
+  .main-header p {
+    font-size: 1em;
+  }
+  .profile-info h2 {
+    font-size: 1.4em;
+  }
+  .profile-info h3 {
+    font-size: 1.1em;
+  }
+  .social-links a,
+  .project-link {
+    padding: 7px 12px;
+    font-size: 0.85em;
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+}
